@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0w8f3fbx3tv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbe07"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6c4i"]
+font_size = 64
+
+[node name="ConfigMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfigPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -209.0
+offset_right = 271.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
+
+[node name="PanelBackground" type="Panel" parent="ConfigPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pbe07")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="ConfigPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FullScreen" type="Button" parent="ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Tela Cheia
+"
+
+[node name="Volume" type="HBoxContainer" parent="ConfigPanel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ConfigPanel/OptionsContainer/Volume"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Vol"
+label_settings = SubResource("LabelSettings_p6c4i")
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="ConfigPanel/OptionsContainer/Volume"]
+custom_minimum_size = Vector2(271, 96)
+layout_mode = 2
+
+[node name="Language" type="Button" parent="ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Idioma"
+
+[node name="ExitConfig" type="Button" parent="ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Fechar"
