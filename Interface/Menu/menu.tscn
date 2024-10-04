@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm25056tyrsyl"]
+
+[ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blackbackground" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_akneg")
+expand_mode = 1
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_akneg")
+
+[node name="OptionsPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -17.0
+offset_right = 271.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
+
+[node name="PanelBackground" type="Panel" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Init" type="Button" parent="OptionsPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Iniciar"
+
+[node name="Continue" type="Button" parent="OptionsPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Continuar"
+
+[node name="Config" type="Button" parent="OptionsPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Configurações
+"
+
+[node name="Credits" type="Button" parent="OptionsPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Creditos"
+
+[node name="Exit" type="Button" parent="OptionsPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Sair
+"
