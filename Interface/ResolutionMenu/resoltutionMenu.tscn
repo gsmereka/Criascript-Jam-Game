@@ -29,6 +29,7 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="Label" parent="."]
+process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -41,7 +42,7 @@ offset_bottom = 349.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_2cylu")
 theme_override_font_sizes/font_size = 128
-text = "Resolution"
+text = "Resolução"
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
@@ -83,8 +84,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2cylu")
 theme_override_font_sizes/font_size = 64
-text = "Tela Cheia
-"
+text = "Tela Cheia"
 
 [node name="1080p" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2

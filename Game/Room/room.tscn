@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b46ln0l8u82r0"]
+
+[ext_resource type="Script" path="res://Game/Player/player.gd" id="1_oiii0"]
+[ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_najv8"]
+
+[node name="Room" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1905.0
+offset_bottom = 1091.0
+color = Color(0.184384, 0.0896672, 1.20327e-08, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(992, 562)
+script = ExtResource("1_oiii0")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_v4eaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_najv8")

@@ -1,0 +1,71 @@
+# LANGUAGE translation for Psicose for the following files:
+# res://Interface/LenguageMenu/lenguage_menu.tscn
+# res://Interface/Menu/menu_options.tscn
+# res://Interface/ConfigMenu/config_menu.tscn
+# res://Interface/ResolutionMenu/resoltutionMenu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Psicose\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Idioma"
+msgstr ""
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "English"
+msgstr ""
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "PT-BR"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+msgid "Iniciar"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+msgid "Continuar"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Configurações"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+msgid "Sair"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Tela Cheia"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Vol"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Fechar"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Resolução"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1920 : 1080"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1280 : 720"
+msgstr ""

@@ -59,8 +59,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
-text = "Iniciar
-"
+text = "Iniciar"
 flat = true
 
 [node name="shadow" type="Label" parent="ConfigPanel/OptionsContainer/Init"]
@@ -83,8 +82,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
-text = "
-"
 horizontal_alignment = 1
 script = ExtResource("3_br6j1")
 
@@ -96,8 +93,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
-text = "Continuar
-"
+text = "Continuar"
 flat = true
 
 [node name="shadow" type="Label" parent="ConfigPanel/OptionsContainer/Continue"]
@@ -132,8 +128,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
-text = "Configurações
-"
+text = "Configurações"
 flat = true
 
 [node name="shadow" type="Label" parent="ConfigPanel/OptionsContainer/Config"]
@@ -156,12 +151,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
-text = "
-"
 horizontal_alignment = 1
 script = ExtResource("3_br6j1")
 
 [node name="Exit" type="Button" parent="ConfigPanel/OptionsContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -191,8 +185,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_0gbpl")
 theme_override_font_sizes/font_size = 64
-text = "
-"
 horizontal_alignment = 1
 script = ExtResource("3_br6j1")
 

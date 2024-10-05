@@ -43,7 +43,7 @@ offset_bottom = 349.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_w4avm")
 theme_override_font_sizes/font_size = 128
-text = "Language"
+text = "Idioma"
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
@@ -62,6 +62,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
 
 [node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,8 +98,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4avm")
 theme_override_font_sizes/font_size = 64
-text = "English
-"
+text = "English"
 
 [node name="Portuguese" type="HBoxContainer" parent="Panel/OptionsContainer"]
 custom_minimum_size = Vector2(0, 96)
@@ -122,8 +122,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4avm")
 theme_override_font_sizes/font_size = 64
-text = "PT-BR
-"
+text = "PT-BR"
 
 [connection signal="pressed" from="Panel/OptionsContainer/English/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="Panel/OptionsContainer/Portuguese/Portuguese" to="." method="_on_portuguese_pressed"]

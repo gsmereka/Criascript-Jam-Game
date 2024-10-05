@@ -1,0 +1,76 @@
+# LANGUAGE translation for Psicose for the following files:
+# res://Interface/LenguageMenu/lenguage_menu.tscn
+# res://Interface/Menu/menu_options.tscn
+# res://Interface/ConfigMenu/config_menu.tscn
+# res://Interface/ResolutionMenu/resoltutionMenu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Psicose\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Idioma"
+msgstr "Language"
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "English"
+msgstr "English"
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "PT-BR"
+msgstr "PT-BR"
+
+#: Interface/Menu/menu_options.tscn
+msgid "Iniciar"
+msgstr "Start"
+
+#: Interface/Menu/menu_options.tscn
+msgid "Continuar"
+msgstr "Continue"
+
+#: Interface/Menu/menu_options.tscn Interface/ConfigMenu/config_menu.tscn
+msgid "Configurações"
+msgstr "Settings"
+
+#: Interface/Menu/menu_options.tscn
+msgid "Sair"
+msgstr "Exit"
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Tela Cheia"
+msgstr "Fullscreen"
+
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Vol"
+msgstr "Vol"
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Fechar"
+msgstr "Close"
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Resolução"
+msgstr "Resolution"
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1920 : 1080"
+msgstr "Window = 1920 : 1080"
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1280 : 720"
+msgstr "Window = 1280 : 720"
