@@ -1,21 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlya20yq7j2bg"]
+[gd_scene load_steps=4 format=3 uid="uid://dlya20yq7j2bg"]
 
 [ext_resource type="Script" path="res://Interface/ResolutionMenu/resolutionMenu.gd" id="1_7w7st"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_2cylu"]
-[ext_resource type="Texture2D" uid="uid://dettwgh00v7dy" path="res://Interface/ConfigMenu/slider.bmp" id="3_hug10"]
-[ext_resource type="Texture2D" uid="uid://dqa178ysibmx0" path="res://Interface/ConfigMenu/slider-grabed.bmp" id="4_3wvl0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_p6c4i"]
-font_size = 64
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8wrt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qre7o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsgns"]
 
 [node name="ResolutionMenu" type="Control" node_paths=PackedStringArray("init_button")]
 process_mode = 3
@@ -93,48 +82,26 @@ theme_override_font_sizes/font_size = 64
 text = "Tela Cheia
 "
 
-[node name="Volume" type="HBoxContainer" parent="Panel/OptionsContainer"]
-custom_minimum_size = Vector2(0, 96)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/OptionsContainer/Volume"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_2cylu")
-text = "Vol"
-label_settings = SubResource("LabelSettings_p6c4i")
-horizontal_alignment = 1
-
-[node name="Volume" type="HSlider" parent="Panel/OptionsContainer/Volume"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_icons/grabber = ExtResource("3_hug10")
-theme_override_icons/grabber_highlight = ExtResource("4_3wvl0")
-theme_override_icons/grabber_disabled = ExtResource("3_hug10")
-theme_override_icons/tick = ExtResource("3_hug10")
-theme_override_styles/slider = SubResource("StyleBoxFlat_n8wrt")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qre7o")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fsgns")
-step = 10.0
-ticks_on_borders = true
-
-[node name="Language" type="Button" parent="Panel/OptionsContainer"]
+[node name="1080p" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2cylu")
 theme_override_font_sizes/font_size = 64
-text = "Idioma"
+text = "Janela = 1920 : 1080"
 
-[node name="ExitConfig" type="Button" parent="Panel/OptionsContainer"]
+[node name="720p" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2cylu")
+theme_override_font_sizes/font_size = 64
+text = "Janela = 1280 : 720"
+
+[node name="Close" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_2cylu")
 theme_override_font_sizes/font_size = 64
 text = "Fechar"
-
-[connection signal="pressed" from="Panel/OptionsContainer/FullScreen" to="." method="_on_full_screen_pressed"]
-[connection signal="pressed" from="Panel/OptionsContainer/Language" to="." method="_on_language_pressed"]
-[connection signal="pressed" from="Panel/OptionsContainer/ExitConfig" to="." method="_on_exit_config_pressed"]
