@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm25056tyrsyl"]
+[gd_scene load_steps=4 format=3 uid="uid://bm25056tyrsyl"]
 
 [ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
 [ext_resource type="PackedScene" uid="uid://bi0w8f3fbx3tv" path="res://Interface/ConfigMenu/config_menu.tscn" id="2_5hr7w"]
-[ext_resource type="Script" path="res://Interface/Menu/selection_cursor.gd" id="2_xqi0e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdoyc"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -43,14 +39,6 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_akneg")
-
-[node name="SelectionCursor" type="ColorRect" parent="." node_paths=PackedStringArray("menu")]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(1, 0, 0, 1)
-script = ExtResource("2_xqi0e")
-menu = NodePath("../OptionsPanel2/OptionsContainer")
 
 [node name="OptionsPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -112,68 +100,5 @@ theme_override_font_sizes/font_size = 64
 text = "Sair
 "
 
-[node name="OptionsPanel2" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -17.0
-offset_right = 271.0
-offset_bottom = 576.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
-
-[node name="PanelBackground" type="Panel" parent="OptionsPanel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mdoyc")
-
-[node name="OptionsContainer" type="VBoxContainer" parent="OptionsPanel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -71.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Init" type="Label" parent="OptionsPanel2/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Iniciar"
-
-[node name="Continue" type="Label" parent="OptionsPanel2/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Continuar"
-
-[node name="Config" type="Label" parent="OptionsPanel2/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Configurações
-"
-
-[node name="Credits" type="Label" parent="OptionsPanel2/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Creditos"
-
-[node name="Exit" type="Label" parent="OptionsPanel2/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Sair
-"
-
 [node name="ConfigMenu" parent="." instance=ExtResource("2_5hr7w")]
-visible = false
 layout_mode = 1

@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi0w8f3fbx3tv"]
+[gd_scene load_steps=10 format=3 uid="uid://bi0w8f3fbx3tv"]
+
+[ext_resource type="Script" path="res://Interface/ConfigMenu/config_menu.gd" id="1_mpwmf"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_qgxes"]
+[ext_resource type="Texture2D" uid="uid://dettwgh00v7dy" path="res://Interface/ConfigMenu/slider.bmp" id="3_vx6u2"]
+[ext_resource type="Texture2D" uid="uid://dqa178ysibmx0" path="res://Interface/ConfigMenu/slider-grabed.bmp" id="4_q2shm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbe07"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_p6c4i"]
 font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8wrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qre7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsgns"]
 
 [node name="ConfigMenu" type="Control"]
 layout_mode = 3
@@ -16,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mpwmf")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -26,6 +35,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -768.0
+offset_top = 221.0
+offset_right = 768.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qgxes")
+theme_override_font_sizes/font_size = 128
+text = "Configurações"
+horizontal_alignment = 1
 
 [node name="ConfigPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -42,28 +67,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
 
-[node name="PanelBackground" type="Panel" parent="ConfigPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -9.0
-offset_bottom = -100.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pbe07")
-
 [node name="OptionsContainer" type="VBoxContainer" parent="ConfigPanel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -71.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -162.0
+offset_right = 324.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FullScreen" type="Button" parent="ConfigPanel/OptionsContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
 text = "Tela Cheia
 "
@@ -75,20 +97,37 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ConfigPanel/OptionsContainer/Volume"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qgxes")
 text = "Vol"
 label_settings = SubResource("LabelSettings_p6c4i")
 horizontal_alignment = 1
 
 [node name="Volume" type="HSlider" parent="ConfigPanel/OptionsContainer/Volume"]
-custom_minimum_size = Vector2(271, 96)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("3_vx6u2")
+theme_override_icons/grabber_highlight = ExtResource("4_q2shm")
+theme_override_icons/grabber_disabled = ExtResource("3_vx6u2")
+theme_override_icons/tick = ExtResource("3_vx6u2")
+theme_override_styles/slider = SubResource("StyleBoxFlat_n8wrt")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qre7o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fsgns")
+step = 10.0
+ticks_on_borders = true
 
 [node name="Language" type="Button" parent="ConfigPanel/OptionsContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
 text = "Idioma"
 
 [node name="ExitConfig" type="Button" parent="ConfigPanel/OptionsContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
 text = "Fechar"
