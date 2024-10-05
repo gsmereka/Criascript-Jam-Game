@@ -75,6 +75,8 @@ grow_vertical = 2
 
 [node name="FullScreen" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Close")
+focus_neighbor_bottom = NodePath("../1080p")
 focus_next = NodePath("../1080p")
 focus_previous = NodePath("../Close")
 theme_type_variation = &"FlatButton"
@@ -86,6 +88,8 @@ text = "Tela Cheia
 
 [node name="1080p" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../FullScreen")
+focus_neighbor_bottom = NodePath("../720p")
 focus_next = NodePath("../720p")
 focus_previous = NodePath("../FullScreen")
 theme_type_variation = &"FlatButton"
@@ -96,6 +100,8 @@ text = "Janela = 1920 : 1080"
 
 [node name="720p" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../1080p")
+focus_neighbor_bottom = NodePath("../Close")
 focus_next = NodePath("../Close")
 focus_previous = NodePath("../1080p")
 theme_type_variation = &"FlatButton"
@@ -106,6 +112,8 @@ text = "Janela = 1280 : 720"
 
 [node name="Close" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../720p")
+focus_neighbor_bottom = NodePath("../FullScreen")
 focus_next = NodePath("../FullScreen")
 focus_previous = NodePath("../720p")
 theme_type_variation = &"FlatButton"

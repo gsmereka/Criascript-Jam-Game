@@ -4,7 +4,7 @@ class_name Menu
 @export var init_button: Button
 @export var backup_button: Button
 @onready var init_button_grab = _grab_init_button()
-@onready var print_Result = _debug()
+#@onready var print_Result = _debug()
 
 func _debug():
 	print(init_button)
