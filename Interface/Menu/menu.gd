@@ -1,29 +1,49 @@
 extends Control
 
-@onready var init_button := $ConfigPanel/OptionsContainer/Init
+# Lista de caminhos para os nodes que você quer instanciar
+var node_paths: Array = [
+	"res://Interface/LenguageMenu/lenguage_menu.tscn",
+	"res://Interface/ResolutionMenu/resoltutionMenu.tscn",
+	"res://Interface/Menu/menu_options.tscn"
+]
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	init_button.grab_focus()
-	pass # Replace with function body.
+var node_names: Array = [
+	"LenguageMenu",
+	"ResolutionMenu",
+	"MenuOptions"
+]
 
+var current_index: int = 0
+var current_node: Node = null
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _ready():
+	# Inicia o processo chamando o primeiro node
+	#_instanciar_proximo_node()
 	pass
+	
 
+func _process(delta):
+	if current_index == 0:
+		var node = preload("res://Interface/Menu/menu_options.tscn").instantiate()
+		add_child(node)
+		current_index += 1
+	# Verifica se o node atual foi concluído
+	return
+	if (current_index - 1 < node_paths.size()) && !self.get_node_or_null(node_names[current_index - 1]):
+		_on_node_finalizado()
 
-func _on_init_pressed() -> void:
-	pass # Replace with function body.
+func _instanciar_proximo_node():
+	# Verifica se ainda há nodes na lista
+	if current_index < node_paths.size():
+		var node_scene = load(node_paths[current_index])
+		current_node = node_scene.instantiate()
+		
+		# Adiciona o node à cena
+		add_child(current_node)
+		
+		# Incrementa o índice para o próximo node
+		current_index += 1
 
-
-func _on_config_pressed() -> void:
-	#get_tree().paused = true
-	var node = preload("res://Interface/ConfigMenu/config_menu.tscn").instantiate()
-	get_parent().add_child(node)
-	pass # Replace with function body.
-
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()
-	pass # Replace with function body.
+func _on_node_finalizado():
+	# Chama a função para instanciar o próximo node
+	_instanciar_proximo_node()

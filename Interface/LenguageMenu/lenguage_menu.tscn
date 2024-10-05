@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpslbi4lr2l1y"]
+
+[ext_resource type="Script" path="res://Interface/LenguageMenu/lenguage_menu.gd" id="1_2svfb"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_w4avm"]
+[ext_resource type="Texture2D" uid="uid://dt0bn7ov480ll" path="res://Interface/LenguageMenu/USAFlag.png" id="3_af3qm"]
+[ext_resource type="Texture2D" uid="uid://de7lk4wbqvbnt" path="res://Interface/LenguageMenu/BrazilFlag.png" id="4_3s4db"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="LenguageMenu" type="Control" node_paths=PackedStringArray("init_button")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2svfb")
+init_button = NodePath("Panel/OptionsContainer/English/English")
+metadata/_edit_pinned_properties_ = [&"init_button"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -768.0
+offset_top = 221.0
+offset_right = 768.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_w4avm")
+theme_override_font_sizes/font_size = 128
+text = "Language"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -209.0
+offset_right = 271.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -162.0
+offset_right = 324.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="English" type="HBoxContainer" parent="Panel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/OptionsContainer/English"]
+layout_mode = 2
+texture = ExtResource("3_af3qm")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="English" type="Button" parent="Panel/OptionsContainer/English"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Portuguese/Portuguese")
+focus_neighbor_top = NodePath("../../Portuguese/Portuguese")
+focus_neighbor_right = NodePath("../../Portuguese/Portuguese")
+focus_neighbor_bottom = NodePath("../../Portuguese/Portuguese")
+focus_next = NodePath("../../Portuguese/Portuguese")
+focus_previous = NodePath("../../Portuguese/Portuguese")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4avm")
+theme_override_font_sizes/font_size = 64
+text = "English
+"
+
+[node name="Portuguese" type="HBoxContainer" parent="Panel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/OptionsContainer/Portuguese"]
+layout_mode = 2
+texture = ExtResource("4_3s4db")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Portuguese" type="Button" parent="Panel/OptionsContainer/Portuguese"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../English/English")
+focus_neighbor_top = NodePath("../../English/English")
+focus_neighbor_right = NodePath("../../English/English")
+focus_neighbor_bottom = NodePath("../../English/English")
+focus_next = NodePath("../../English/English")
+focus_previous = NodePath("../../English/English")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4avm")
+theme_override_font_sizes/font_size = 64
+text = "PT-BR
+"
+
+[connection signal="pressed" from="Panel/OptionsContainer/English/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="Panel/OptionsContainer/Portuguese/Portuguese" to="." method="_on_portuguese_pressed"]
