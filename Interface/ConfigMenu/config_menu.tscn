@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dettwgh00v7dy" path="res://Interface/ConfigMenu/slider.bmp" id="3_vx6u2"]
 [ext_resource type="Texture2D" uid="uid://dqa178ysibmx0" path="res://Interface/ConfigMenu/slider-grabed.bmp" id="4_q2shm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6c4i"]
@@ -65,7 +65,7 @@ offset_right = 271.0
 offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
 
 [node name="OptionsContainer" type="VBoxContainer" parent="ConfigPanel"]
 layout_mode = 1

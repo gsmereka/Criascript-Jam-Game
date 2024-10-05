@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm25056tyrsyl"]
+[gd_scene load_steps=8 format=3 uid="uid://bm25056tyrsyl"]
 
 [ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
-[ext_resource type="PackedScene" uid="uid://bi0w8f3fbx3tv" path="res://Interface/ConfigMenu/config_menu.tscn" id="2_5hr7w"]
+[ext_resource type="Script" path="res://Interface/ConfigMenu/config_menu.gd" id="3_1yb3f"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_5i31b"]
+[ext_resource type="Script" path="res://Interface/Menu/button_shadow.gd" id="5_pyvmc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_531sw"]
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -41,6 +50,7 @@ grow_vertical = 2
 texture = ExtResource("1_akneg")
 
 [node name="OptionsPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,5 +110,218 @@ theme_override_font_sizes/font_size = 64
 text = "Sair
 "
 
-[node name="ConfigMenu" parent="." instance=ExtResource("2_5hr7w")]
+[node name="MenuOptions" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_1yb3f")
+
+[node name="BackgroundColor" type="ColorRect" parent="MenuOptions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.329688
+anchor_top = 0.505556
+anchor_right = 0.670313
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="MenuOptions"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -768.0
+offset_top = 221.0
+offset_right = 768.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.698039, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 11
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 128
+text = "Escapefrom
+Asylum
+"
+horizontal_alignment = 1
+
+[node name="ConfigPanel" type="Panel" parent="MenuOptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -94.0
+offset_right = 271.0
+offset_bottom = 499.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MenuOptions/ConfigPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = 1.0
+offset_right = 324.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Init" type="Button" parent="MenuOptions/ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
+text = "Iniciar
+"
+flat = true
+
+[node name="shadow" type="Label" parent="MenuOptions/ConfigPanel/OptionsContainer/Init"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -36.0
+offset_right = 228.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("5_pyvmc")
+
+[node name="Continue" type="Button" parent="MenuOptions/ConfigPanel/OptionsContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
+text = "Continuar
+"
+flat = true
+
+[node name="shadow" type="Label" parent="MenuOptions/ConfigPanel/OptionsContainer/Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -36.0
+offset_right = 228.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("5_pyvmc")
+
+[node name="Config" type="Button" parent="MenuOptions/ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
+text = "Configurações
+"
+flat = true
+
+[node name="shadow" type="Label" parent="MenuOptions/ConfigPanel/OptionsContainer/Config"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -36.0
+offset_right = 228.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("5_pyvmc")
+
+[node name="Exit" type="Button" parent="MenuOptions/ConfigPanel/OptionsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxFlat_531sw")
+text = "Sair"
+flat = true
+
+[node name="shadow" type="Label" parent="MenuOptions/ConfigPanel/OptionsContainer/Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -36.0
+offset_right = 228.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.923959, 1.51612e-06, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/font = ExtResource("4_5i31b")
+theme_override_font_sizes/font_size = 64
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("5_pyvmc")

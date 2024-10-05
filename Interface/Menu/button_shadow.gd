@@ -1,10 +1,8 @@
-extends Control
-
-@onready var init_button := $ConfigPanel/OptionsContainer/Init
+extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	init_button.grab_focus()
+	text = get_parent().text
 	pass # Replace with function body.
 
 
