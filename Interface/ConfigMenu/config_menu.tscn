@@ -18,6 +18,7 @@ font_size = 64
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsgns"]
 
 [node name="ConfigMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,3 +132,7 @@ theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
 text = "Fechar"
+
+[connection signal="pressed" from="ConfigPanel/OptionsContainer/FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="ConfigPanel/OptionsContainer/Language" to="." method="_on_language_pressed"]
+[connection signal="pressed" from="ConfigPanel/OptionsContainer/ExitConfig" to="." method="_on_exit_config_pressed"]

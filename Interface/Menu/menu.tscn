@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bm25056tyrsyl"]
+[gd_scene load_steps=7 format=3 uid="uid://bm25056tyrsyl"]
 
 [ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
-[ext_resource type="Script" path="res://Interface/ConfigMenu/config_menu.gd" id="3_1yb3f"]
+[ext_resource type="Script" path="res://Interface/Menu/menu.gd" id="1_ejqst"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_5i31b"]
 [ext_resource type="Script" path="res://Interface/Menu/button_shadow.gd" id="5_pyvmc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxvck"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -49,75 +46,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_akneg")
 
-[node name="OptionsPanel" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -17.0
-offset_right = 271.0
-offset_bottom = 576.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nxvck")
-
-[node name="PanelBackground" type="Panel" parent="OptionsPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -93.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="OptionsContainer" type="VBoxContainer" parent="OptionsPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -71.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Init" type="Button" parent="OptionsPanel/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Iniciar"
-
-[node name="Continue" type="Button" parent="OptionsPanel/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Continuar"
-
-[node name="Config" type="Button" parent="OptionsPanel/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Configurações
-"
-
-[node name="Credits" type="Button" parent="OptionsPanel/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Creditos"
-
-[node name="Exit" type="Button" parent="OptionsPanel/OptionsContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Sair
-"
-
 [node name="MenuOptions" type="Control" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_1yb3f")
+script = ExtResource("1_ejqst")
 
 [node name="BackgroundColor" type="ColorRect" parent="MenuOptions"]
 layout_mode = 1
@@ -325,3 +262,7 @@ text = "
 "
 horizontal_alignment = 1
 script = ExtResource("5_pyvmc")
+
+[connection signal="pressed" from="MenuOptions/ConfigPanel/OptionsContainer/Init" to="MenuOptions" method="_on_init_pressed"]
+[connection signal="pressed" from="MenuOptions/ConfigPanel/OptionsContainer/Config" to="MenuOptions" method="_on_config_pressed"]
+[connection signal="pressed" from="MenuOptions/ConfigPanel/OptionsContainer/Exit" to="MenuOptions" method="_on_exit_pressed"]
